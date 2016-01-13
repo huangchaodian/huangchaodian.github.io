@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a>
 					</div>
 				</section>
 				
@@ -215,7 +215,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/08/firstblog/">firstblog</a>
+      <a class="article-title" href="/2016/01/08/firstblog/">mkdir rmdir rm</a>
     </h1>
   
 
@@ -224,13 +224,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#mkdir创建文件目录<a href="http://youthtail27.blog.163.com/blog/static/257063016201601332845642" target="_blank" rel="external">原始博客</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dir0				 --创建dir0</span><br><span class="line">mkdir -m <span class="number">777</span> yh			 --m mode 赋予mode，类似chmod</span><br></pre></td></tr></table></figure></p>
+<p>drwxrwxrwx 2 yhh  yhh  4096 2016-01-12 23:32 yh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p dir11/dir2 		-- p parent 创建多级目录</span><br><span class="line">mkdir -v dir3				 -- v verbose 每次创建目录之后就显示目录</span><br></pre></td></tr></table></figure></p>
+<p>mkdir: created directory `yh1’</p>
+<p>#思考：</p>
+<p>##1. 怎样for循环创建10个目录，每个目录有10个子文件？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#！/bin/sh</span></span><br><span class="line"><span class="built_in">echo</span> enter dir</span><br><span class="line"><span class="built_in">read</span> dir</span><br><span class="line"><span class="built_in">echo</span> enter folder number</span><br><span class="line"><span class="built_in">read</span> folder</span><br><span class="line"><span class="built_in">echo</span> enter file number</span><br><span class="line"><span class="built_in">read</span> file</span><br><span class="line"><span class="keyword">for</span> ((i=<span class="number">1</span>;i&lt;=<span class="variable">$folder</span>;i++))</span><br><span class="line"><span class="keyword">do</span> mkdir -p <span class="variable">$dir</span>/<span class="variable">$i</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$dir</span>/<span class="variable">$i</span></span><br><span class="line"><span class="keyword">for</span> ((j=<span class="number">1</span>;j&lt;=<span class="number">10</span>;j++))</span><br><span class="line"><span class="keyword">do</span> touch <span class="variable">$j</span>.txt</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/home/<span class="built_in">test</span><span class="comment"># ls</span></span><br><span class="line"><span class="number">1</span>  <span class="number">10</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span></span><br><span class="line">root@ubuntu:/home/<span class="built_in">test</span><span class="comment"># cd 1</span></span><br><span class="line">root@ubuntu:/home/<span class="built_in">test</span>/<span class="number">1</span><span class="comment"># ls</span></span><br><span class="line"><span class="number">10</span>.c  <span class="number">1</span>.c  <span class="number">2</span>.c  <span class="number">3</span>.c  <span class="number">4</span>.c  <span class="number">5</span>.c  <span class="number">6</span>.c  <span class="number">7</span>.c  <span class="number">8</span>.c  <span class="number">9</span>.c</span><br></pre></td></tr></table></figure>
+<p>#2.怎样删除所创建的文件呢？</p>
+<p>##rmdir 删除空目录</p>
+<p>##rmdir -p 递归删除，当删除子目录后父目录为空，父目录也会一并删除</p>
+<p>##rmdir -p yhh1/yhh2             –yhh1 yhh2都会被删除</p>
+<p>##rmdir -v 显示删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/home/<span class="built_in">test</span>/<span class="number">1</span><span class="comment"># rmdir -v yhh1/yhh2</span></span><br><span class="line">rmdir: removing directory, `yhh1/yhh2<span class="string">'</span></span><br></pre></td></tr></table></figure></p>
+<p>##rm  删除文件或目录</p>
+<p>##rm -i                     –interactive交互删除，删除之前会询问enter y表示确定，n 表示不删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/home/<span class="built_in">test</span>/<span class="number">1</span><span class="comment"># rm -i 3.c</span></span><br><span class="line">rm: remove regular empty file `<span class="number">3</span>.c<span class="string">'? y</span></span><br></pre></td></tr></table></figure></p>
+<p>##rm -f                     –force 强制删除</p>
+<p>##rm -r                     –recursive递归删除</p>
+<p>##rm -v             –verbose显示删除的文件</p>
+<p>##rm -rf            – 删除所有文件和目录</p>
+
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-shell/">linux shell</a></li></ul>
+	</div>
+
       
 
       
