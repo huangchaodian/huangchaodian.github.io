@@ -198,6 +198,68 @@
 
       <div class="body-wrap">
   
+    <article id="post-docker创建虚拟机并使用ssh登录到虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/" class="article-date">
+  	<time datetime="2016-01-26T13:22:10.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/">docker创建虚拟机并使用ssh登录到虚拟机</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6"><a href="#ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6" class="headerlink" title="ubuntu 14.04 安装docker预备条件"></a>ubuntu 14.04 安装docker预备条件</h1><p>Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure></p>
+<p>升级软件包管理器 安装必须和可选包 后重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install linux-image-generic-lts-trusty</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></p>
+<p>查看wget是否安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install wget <span class="comment">#安装wget</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Ubuntu__u5B89_u88C5Docker"><a href="#Ubuntu__u5B89_u88C5Docker" class="headerlink" title="Ubuntu 安装Docker"></a>Ubuntu 安装Docker</h1><p>获取最新版本的Docker安装包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure></p>
+<p>验证 Docker 是否被正确的安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></p>
+<p>创建 docker 用户组 以及添加 当前用户到 docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add the docker group if it doesn't already exist.</span></span><br><span class="line">$ sudo groupadd docker</span><br><span class="line"><span class="comment">#改完后需要重新登陆用户</span></span><br><span class="line">$ sudo gpasswd <span class="operator">-a</span> <span class="variable">$&#123;USER&#125;</span> docker</span><br></pre></td></tr></table></figure></p>
+<h1 id="u8FD0_u884C_u955C_u50CFubuntu__u8BE5_u547D_u4EE4_u5C06_u81EA_u52A8_u4E0B_u8F7D_u6700_u65B0_u955C_u50CF_u5E76_u8FD0_u884C"><a href="#u8FD0_u884C_u955C_u50CFubuntu__u8BE5_u547D_u4EE4_u5C06_u81EA_u52A8_u4E0B_u8F7D_u6700_u65B0_u955C_u50CF_u5E76_u8FD0_u884C" class="headerlink" title="运行镜像ubuntu 该命令将自动下载最新镜像并运行"></a>运行镜像ubuntu 该命令将自动下载最新镜像并运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+<h1 id="u4E0B_u8F7D_u5B89_u88C5openssh-server__u542F_u52A8ssh__u5E76_u521B_u5EFA_u767B_u5F55_u7528_u6237"><a href="#u4E0B_u8F7D_u5B89_u88C5openssh-server__u542F_u52A8ssh__u5E76_u521B_u5EFA_u767B_u5F55_u7528_u6237" class="headerlink" title="下载安装openssh-server 启动ssh 并创建登录用户"></a>下载安装openssh-server 启动ssh 并创建登录用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openssh-server</span><br><span class="line">/etc/init.d/ssh start</span><br><span class="line">adduser admin</span><br><span class="line">su admin</span><br></pre></td></tr></table></figure>
+<h1 id="u4F7F_u7528ssh_u767B_u5F55_u5230docker_u865A_u62DF_u673A_u4E2D"><a href="#u4F7F_u7528ssh_u767B_u5F55_u5230docker_u865A_u62DF_u673A_u4E2D" class="headerlink" title="使用ssh登录到docker虚拟机中"></a>使用ssh登录到docker虚拟机中</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig <span class="comment">#查看虚拟机ip地址</span></span><br><span class="line">ssh admin@<span class="number">172.17</span>.<span class="number">0.2</span> <span class="comment">#登录到虚拟机中</span></span><br></pre></td></tr></table></figure>
+<h1 id="u9644_u52A0_u6307_u4EE4"><a href="#u9644_u52A0_u6307_u4EE4" class="headerlink" title="附加指令"></a>附加指令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看容器</span></span><br><span class="line">docker ps <span class="operator">-a</span></span><br><span class="line"><span class="comment">#打包镜像</span></span><br><span class="line">docker <span class="built_in">export</span> <span class="number">2</span>ccd734c1ec5 &gt; ubuntu_sshd.tar</span><br><span class="line"><span class="comment">#载入镜像</span></span><br><span class="line">docker import ubuntu_sshd.tar ubuntu:v2</span><br><span class="line"><span class="comment">#删除容器</span></span><br><span class="line">docker rm hufdsaf_dafdsa</span><br><span class="line"><span class="comment">#删除镜像</span></span><br><span class="line">docker rmi <span class="number">2</span>ccd734c1ec5</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-条形码二维码识别器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
