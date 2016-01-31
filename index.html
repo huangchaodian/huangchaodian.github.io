@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a>
+						<a href="/tags/HTK-HDecode/" style="font-size: 10px;">HTK HDecode</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a>
 					</div>
 				</section>
 				
@@ -197,6 +197,66 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-HTK-HDecode语音识别工具包环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/31/HTK-HDecode语音识别工具包环境搭建/" class="article-date">
+  	<time datetime="2016-01-31T13:33:56.000Z" itemprop="datePublished">2016-01-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/31/HTK-HDecode语音识别工具包环境搭建/">HTK HDecode语音识别工具包环境搭建</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTK__u5DE5_u5177_u5305"><a href="#HTK__u5DE5_u5177_u5305" class="headerlink" title="HTK 工具包"></a>HTK 工具包</h1><p>HTK 开源的语音识别工具包，可采用HTK工具包搭建连续语音识别系统，详情参见HTK 官网<a href="http://htk.eng.cam.ac.uk/" target="_blank" rel="external">http://htk.eng.cam.ac.uk/</a><br>注册后 可免费下载 HDecode-3.4.1.tar.gz HTK-3.4.1.tar.gz 两个开源包</p>
+<h2 id="u5B89_u88C5_u4F9D_u8D56_u5E93"><a href="#u5B89_u88C5_u4F9D_u8D56_u5E93" class="headerlink" title="安装依赖库"></a>安装依赖库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br><span class="line"></span><br><span class="line">apt-get install libc6-dev-i386</span><br><span class="line">apt-get install libx11-dev:i386  <span class="comment">#若安装失败请尝试apt-get install libx11-dev</span></span><br></pre></td></tr></table></figure>
+<h2 id="u89E3_u538B_u5230htk_u76EE_u5F55_u4E0B__u7F16_u8BD1"><a href="#u89E3_u538B_u5230htk_u76EE_u5F55_u4E0B__u7F16_u8BD1" class="headerlink" title="解压到htk目录下 编译"></a>解压到htk目录下 编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop<span class="comment"># tar -zxf HDecode-3.4.1.tar.gz</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># tar -zxf HTK-3.4.1.tar.gz</span></span><br><span class="line"></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># cd htk</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># ./configure</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># make  #若没有make命令 apt-get install make 若提示HSLab编译失败这需要将HTKTools/Makefile文件中PROGS 变量中HSLab去掉，HSLab图形化工具用于采集音频语料，使用了libx11-dev:i386</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># make hdecode</span></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># make install #工具包将安装于/user/local/bin目录中</span></span><br><span class="line">/home/vrgroup/Desktop<span class="comment"># make install-hdecode</span></span><br></pre></td></tr></table></figure>
+<h1 id="u8BC6_u522B_u7279_u5F81_u6587_u4EF6"><a href="#u8BC6_u522B_u7279_u5F81_u6587_u4EF6" class="headerlink" title="识别特征文件"></a>识别特征文件</h1><p>工具包安装好以后，可以使用训练好的模型进行语音识别<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop/htk<span class="comment"># mkdir model</span></span><br><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop/htk<span class="comment"># cd  model</span></span><br><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop/htk/model<span class="comment"># cp /home/hucd/Desktop/HTK/* .</span></span><br><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop/htk/model<span class="comment"># HDecode -A -D -V -T 1 -C hdecode.hlda.cfg -H S2.hlda.MMF -y rec -t 250.0 250.0 -u 3500 -v 125.0 -s 12.0 -p -10.0 -w MedArch-3gram -i out 64k.decode.dct xwrd.clustered.mlist 1501.plp</span></span><br><span class="line">其中：</span><br><span class="line">hdecode.hlda.cfg 配置文件</span><br><span class="line">S2.hlda.MMF 声学模型</span><br><span class="line">MedArch-<span class="number">3</span>gram 语言模型</span><br><span class="line"><span class="number">64</span>k.decode.dct 字典</span><br><span class="line">xwrd.clustered.mlist 三音素模型列表</span><br><span class="line"><span class="number">5701</span>.plp 特征文件</span><br><span class="line"></span><br><span class="line"><span class="comment">#若出现错误 Failed to find macroname hmm324.52dim.hlda-39.mat 注意修改hdecode.hlda.cfg文件中参数文件的路径</span></span><br><span class="line"><span class="comment">#转码查看识别结果</span></span><br><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop/htk/model<span class="comment"># iconv -f GBK -t utf-8 out</span></span><br><span class="line"><span class="comment">#!MLF!#</span></span><br><span class="line"><span class="string">"1501.rec"</span></span><br><span class="line"><span class="number">0</span> <span class="number">4900000</span> !SENT_START -<span class="number">2652.573242</span></span><br><span class="line"><span class="number">4900000</span> <span class="number">9400000</span> 患者 -<span class="number">2294.136719</span></span><br><span class="line"><span class="number">9400000</span> <span class="number">14200000</span> 觉 -<span class="number">2501.688965</span></span><br><span class="line"><span class="number">14200000</span> <span class="number">20300000</span> 气喘 -<span class="number">3368.930176</span></span><br><span class="line"><span class="number">20300000</span> <span class="number">23700000</span> 有所 -<span class="number">1921.705078</span></span><br><span class="line"><span class="number">23700000</span> <span class="number">33500000</span> 改善 -<span class="number">5100.401367</span></span><br><span class="line"><span class="number">33500000</span> <span class="number">38400000</span> 咳嗽 -<span class="number">2602.484375</span></span><br><span class="line"><span class="number">38400000</span> <span class="number">44400000</span> 少 -<span class="number">3185.193359</span></span><br><span class="line"><span class="number">44400000</span> <span class="number">47900000</span> 见 -<span class="number">2019.320312</span></span><br><span class="line"><span class="number">47900000</span> <span class="number">53600000</span> 少许 -<span class="number">3017.568359</span></span><br><span class="line"><span class="number">53600000</span> <span class="number">58200000</span> 白色 -<span class="number">2422.214844</span></span><br><span class="line"><span class="number">58200000</span> <span class="number">68200000</span> 粘痰 -<span class="number">5062.822266</span></span><br><span class="line"><span class="number">68200000</span> <span class="number">70900000</span> 无 -<span class="number">1137.910156</span></span><br><span class="line"><span class="number">70900000</span> <span class="number">96900000</span> 夜间阵发性呼吸困难 -<span class="number">13797.703125</span></span><br><span class="line"><span class="number">96900000</span> <span class="number">109800000</span> !SENT_END -<span class="number">4211.941406</span></span><br><span class="line">.</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTK-HDecode/">HTK HDecode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-httpfox" class="article article-type-post" itemscope itemprop="blogPost">
   
