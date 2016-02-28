@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>docker创建虚拟机并使用ssh登录到虚拟机 | Hucd</title>
+  <title>docker 创建虚拟机并使用ssh登录到虚拟机 | Hucd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu 14.04 安装docker预备条件Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。1uname -r
-升级软件包管理器 安装必须和可选包 后重启123sudo apt-get updatesudo apt-get install linux-image-gene">
+  <meta name="description" content="前言在新环境中搭建已有系统是一件非常头疼的事情,缓慢的安装过程，莫名其妙的错误。。。。而docker可以打包你的环境为镜像，需要部署的时候直接加载镜像即可。当然这只是docker的一个小的功能。
+
+常见命令如下：12345678910111213141516#载入镜像docker import ubuntu_sshd.tar ubuntu:v2#查看镜像docker images#运行容器dock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker创建虚拟机并使用ssh登录到虚拟机">
+<meta property="og:title" content="docker 创建虚拟机并使用ssh登录到虚拟机">
 <meta property="og:url" content="http://yoursite.com/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/index.html">
 <meta property="og:site_name" content="Hucd">
-<meta property="og:description" content="ubuntu 14.04 安装docker预备条件Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。1uname -r
-升级软件包管理器 安装必须和可选包 后重启123sudo apt-get updatesudo apt-get install linux-image-gene">
-<meta property="og:updated_time" content="2016-01-31T05:22:48.000Z">
+<meta property="og:description" content="前言在新环境中搭建已有系统是一件非常头疼的事情,缓慢的安装过程，莫名其妙的错误。。。。而docker可以打包你的环境为镜像，需要部署的时候直接加载镜像即可。当然这只是docker的一个小的功能。
+
+常见命令如下：12345678910111213141516#载入镜像docker import ubuntu_sshd.tar ubuntu:v2#查看镜像docker images#运行容器dock">
+<meta property="og:updated_time" content="2016-02-28T04:00:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker创建虚拟机并使用ssh登录到虚拟机">
-<meta name="twitter:description" content="ubuntu 14.04 安装docker预备条件Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。1uname -r
-升级软件包管理器 安装必须和可选包 后重启123sudo apt-get updatesudo apt-get install linux-image-gene">
+<meta name="twitter:title" content="docker 创建虚拟机并使用ssh登录到虚拟机">
+<meta name="twitter:description" content="前言在新环境中搭建已有系统是一件非常头疼的事情,缓慢的安装过程，莫名其妙的错误。。。。而docker可以打包你的环境为镜像，需要部署的时候直接加载镜像即可。当然这只是docker的一个小的功能。
+
+常见命令如下：12345678910111213141516#载入镜像docker import ubuntu_sshd.tar ubuntu:v2#查看镜像docker images#运行容器dock">
   
     <link rel="alternative" href="/atom.xml" title="Hucd" type="application/atom+xml">
   
@@ -118,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/HTK-HDecode/" style="font-size: 10px;">HTK HDecode</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/nginx-php-redis-htk/" style="font-size: 10px;">nginx;php;redis;htk</a> <a href="/tags/php/" style="font-size: 10px;">php</a>
+						<a href="/tags/HTK-HDecode/" style="font-size: 10px;">HTK HDecode</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docke/" style="font-size: 10px;">docke</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/nginx-php-redis-htk/" style="font-size: 10px;">nginx;php;redis;htk</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
 					</div>
 				</section>
 				
@@ -217,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      docker创建虚拟机并使用ssh登录到虚拟机
+      docker 创建虚拟机并使用ssh登录到虚拟机
     </h1>
   
 
@@ -225,6 +228,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docke/">docke</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -233,7 +240,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6"><a href="#ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6" class="headerlink" title="ubuntu 14.04 安装docker预备条件"></a>ubuntu 14.04 安装docker预备条件</h1><p>Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p><strong>前言</strong><br>在新环境中搭建已有系统是一件非常头疼的事情,缓慢的安装过程，莫名其妙的错误。。。。而docker可以打包你的环境为镜像，需要部署的时候直接加载镜像即可。当然这只是docker的一个小的功能。</p>
+</blockquote>
+<p>常见命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#载入镜像</span></span><br><span class="line">docker import ubuntu_sshd.tar ubuntu:v2</span><br><span class="line"><span class="comment">#查看镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment">#运行容器</span></span><br><span class="line">docker run -it ubuntu:v2 /bin/bash</span><br><span class="line"><span class="comment">#查看容器</span></span><br><span class="line">docker ps <span class="operator">-a</span></span><br><span class="line"><span class="comment">#打包镜像</span></span><br><span class="line">docker <span class="built_in">export</span> <span class="number">2</span>ccd734c1ec5 &gt; ubuntu_sshd.tar</span><br><span class="line"><span class="comment">#删除容器</span></span><br><span class="line">docker rm hufdsaf_dafdsa</span><br><span class="line"><span class="comment">#删除镜像</span></span><br><span class="line">docker rmi <span class="number">2</span>ccd734c1ec5</span><br><span class="line"><span class="comment">#启动停止的容器</span></span><br><span class="line">docker start -i hufdsaf_dafdsa</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6"><a href="#ubuntu_14-04__u5B89_u88C5docker_u9884_u5907_u6761_u4EF6" class="headerlink" title="ubuntu 14.04 安装docker预备条件"></a>ubuntu 14.04 安装docker预备条件</h1><p>Docker 需要在64位版本的Ubuntu上安装。此外，你还需要保证你的 Ubuntu 内核的最小版本不低于 3.10，其中3.10 小版本和更新维护版也是可以使用的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure></p>
 <p>升级软件包管理器 安装必须和可选包 后重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install linux-image-generic-lts-trusty</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></p>
 <p>查看wget是否安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install wget <span class="comment">#安装wget</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="Ubuntu__u5B89_u88C5Docker"><a href="#Ubuntu__u5B89_u88C5Docker" class="headerlink" title="Ubuntu 安装Docker"></a>Ubuntu 安装Docker</h1><p>获取最新版本的Docker安装包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure></p>
@@ -242,7 +254,6 @@
 <h1 id="u8FD0_u884C_u955C_u50CFubuntu__u8BE5_u547D_u4EE4_u5C06_u81EA_u52A8_u4E0B_u8F7D_u6700_u65B0_u955C_u50CF_u5E76_u8FD0_u884C"><a href="#u8FD0_u884C_u955C_u50CFubuntu__u8BE5_u547D_u4EE4_u5C06_u81EA_u52A8_u4E0B_u8F7D_u6700_u65B0_u955C_u50CF_u5E76_u8FD0_u884C" class="headerlink" title="运行镜像ubuntu 该命令将自动下载最新镜像并运行"></a>运行镜像ubuntu 该命令将自动下载最新镜像并运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
 <h1 id="u4E0B_u8F7D_u5B89_u88C5openssh-server__u542F_u52A8ssh__u5E76_u521B_u5EFA_u767B_u5F55_u7528_u6237"><a href="#u4E0B_u8F7D_u5B89_u88C5openssh-server__u542F_u52A8ssh__u5E76_u521B_u5EFA_u767B_u5F55_u7528_u6237" class="headerlink" title="下载安装openssh-server 启动ssh 并创建登录用户"></a>下载安装openssh-server 启动ssh 并创建登录用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openssh-server</span><br><span class="line">/etc/init.d/ssh start</span><br><span class="line">adduser admin</span><br><span class="line">su admin</span><br></pre></td></tr></table></figure>
 <h1 id="u4F7F_u7528ssh_u767B_u5F55_u5230docker_u865A_u62DF_u673A_u4E2D"><a href="#u4F7F_u7528ssh_u767B_u5F55_u5230docker_u865A_u62DF_u673A_u4E2D" class="headerlink" title="使用ssh登录到docker虚拟机中"></a>使用ssh登录到docker虚拟机中</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig <span class="comment">#查看虚拟机ip地址</span></span><br><span class="line">ssh admin@<span class="number">172.17</span>.<span class="number">0.2</span> <span class="comment">#登录到虚拟机中</span></span><br></pre></td></tr></table></figure>
-<h1 id="u9644_u52A0_u6307_u4EE4"><a href="#u9644_u52A0_u6307_u4EE4" class="headerlink" title="附加指令"></a>附加指令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看容器</span></span><br><span class="line">docker ps <span class="operator">-a</span></span><br><span class="line"><span class="comment">#查看镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment">#打包镜像</span></span><br><span class="line">docker <span class="built_in">export</span> <span class="number">2</span>ccd734c1ec5 &gt; ubuntu_sshd.tar</span><br><span class="line"><span class="comment">#载入镜像</span></span><br><span class="line">docker import ubuntu_sshd.tar ubuntu:v2</span><br><span class="line"><span class="comment">#删除容器</span></span><br><span class="line">docker rm hufdsaf_dafdsa</span><br><span class="line"><span class="comment">#删除镜像</span></span><br><span class="line">docker rmi <span class="number">2</span>ccd734c1ec5</span><br><span class="line"><span class="comment">#启动停止的容器</span></span><br><span class="line">docker start -i hufdsaf_dafdsa</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -298,7 +309,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="docker创建虚拟机并使用ssh登录到虚拟机" data-title="docker创建虚拟机并使用ssh登录到虚拟机" data-url="http://yoursite.com/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/"></div>
+	<div class="ds-thread" data-thread-key="docker创建虚拟机并使用ssh登录到虚拟机" data-title="docker 创建虚拟机并使用ssh登录到虚拟机" data-url="http://yoursite.com/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
