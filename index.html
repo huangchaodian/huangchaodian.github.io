@@ -598,8 +598,7 @@
         <blockquote>
 <p><strong>前言</strong><br>最近需要在一个相同的网站上执行很多重复性操作，于是乎产生用脚本来代替浏览器操作的念头，而curl工具可以模拟浏览器发出的post,get,提交表单,上传文件，下载文件等等功能，刚好可以满足我的需求。</p>
 </blockquote>
-<p>常用命令如下所示</p>
-<blockquote>
+<h1 id="u5E38_u7528_u547D_u4EE4_u5982_u4E0B_u6240_u793A"><a href="#u5E38_u7528_u547D_u4EE4_u5982_u4E0B_u6240_u793A" class="headerlink" title="常用命令如下所示"></a>常用命令如下所示</h1><blockquote>
 <ul>
 <li>curl localhost/index.php                               #正常访问</li>
 <li>curl localhost/index.php?name=hucd\&amp;password=hucd      #get带参数访问</li>
@@ -607,7 +606,9 @@
 <li>curl -F file=@./test.jpeg localhost/index.php          #上传文件</li>
 <li>curl -d “name=hucd” -c cookie.txt localhost/index.php  #post带参数访问 获取cookie</li>
 <li>curl -b cookie.txt localhost/index.php                 #带cookie访问</li>
-<li>curl -A “Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)” -o out.txt -c cookie.txt -L -w ‘%{url_effective}\n’ localhost/index.php?name=hucd  #模拟浏览器自动跳转循环访问
+<li>curl -A “Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)” -o out.txt -c cookie.txt -L -w ‘%{url_effective}\n’ localhost/index.php?name=hucd  #模拟浏览器自动跳转循环访问</li>
+</ul>
+</blockquote>
       
     </div>
     
