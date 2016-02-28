@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>基于nginx php redis htk搭建在线连续语音识别系统 | Hucd</title>
+  <title>基于 nginx php redis htk 搭建在线连续语音识别系统 | Hucd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上
-采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁nginx 安装123apt-get updateapt-get upgradeapt-get install nginx
-启动nginx123service nginx start #启动nginx服务">
+  <meta name="description" content="前言上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁
+
+常用命令：/etc/init.d/nginx restarttail -f /var/log/nginx/error.logvi /etc/nginx/nginx.conf/etc/init.d/p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于nginx php redis htk搭建在线连续语音识别系统">
+<meta property="og:title" content="基于 nginx php redis htk 搭建在线连续语音识别系统">
 <meta property="og:url" content="http://yoursite.com/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/index.html">
 <meta property="og:site_name" content="Hucd">
-<meta property="og:description" content="上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上
-采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁nginx 安装123apt-get updateapt-get upgradeapt-get install nginx
-启动nginx123service nginx start #启动nginx服务">
-<meta property="og:updated_time" content="2016-01-31T20:42:50.000Z">
+<meta property="og:description" content="前言上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁
+
+常用命令：/etc/init.d/nginx restarttail -f /var/log/nginx/error.logvi /etc/nginx/nginx.conf/etc/init.d/p">
+<meta property="og:updated_time" content="2016-02-28T04:08:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于nginx php redis htk搭建在线连续语音识别系统">
-<meta name="twitter:description" content="上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上
-采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁nginx 安装123apt-get updateapt-get upgradeapt-get install nginx
-启动nginx123service nginx start #启动nginx服务">
+<meta name="twitter:title" content="基于 nginx php redis htk 搭建在线连续语音识别系统">
+<meta name="twitter:description" content="前言上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁
+
+常用命令：/etc/init.d/nginx restarttail -f /var/log/nginx/error.logvi /etc/nginx/nginx.conf/etc/init.d/p">
   
     <link rel="alternative" href="/atom.xml" title="Hucd" type="application/atom+xml">
   
@@ -121,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/HTK-HDecode/" style="font-size: 10px;">HTK HDecode</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docke/" style="font-size: 10px;">docke</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/nginx-php-redis-htk/" style="font-size: 10px;">nginx;php;redis;htk</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
+						<a href="/tags/HTK-HDecode/" style="font-size: 10px;">HTK HDecode</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docke/" style="font-size: 10px;">docke</a> <a href="/tags/htk/" style="font-size: 10px;">htk</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
 					</div>
 				</section>
 				
@@ -220,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      基于nginx php redis htk搭建在线连续语音识别系统
+      基于 nginx php redis htk 搭建在线连续语音识别系统
     </h1>
   
 
@@ -229,7 +229,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx-php-redis-htk/">nginx;php;redis;htk</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
 	</div>
 
         
@@ -240,8 +240,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上</p>
-<h2 id="u91C7_u7528nginx+php_u6765_u63A5_u53D7_u7528_u6237_u9700_u8981_u8BC6_u522B_u7684wav_u97F3_u9891_u6587_u4EF6_2C_u901A_u8FC7htk_u6765_u8BC6_u522B_u97F3_u9891_uFF0Credis_u5145_u5F53_u4E24_u4E2A_u90E8_u5206_u7684_u901A_u4FE1_u6865_u6881"><a href="#u91C7_u7528nginx+php_u6765_u63A5_u53D7_u7528_u6237_u9700_u8981_u8BC6_u522B_u7684wav_u97F3_u9891_u6587_u4EF6_2C_u901A_u8FC7htk_u6765_u8BC6_u522B_u97F3_u9891_uFF0Credis_u5145_u5F53_u4E24_u4E2A_u90E8_u5206_u7684_u901A_u4FE1_u6865_u6881" class="headerlink" title="采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁"></a>采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁</h2><h1 id="nginx__u5B89_u88C5"><a href="#nginx__u5B89_u88C5" class="headerlink" title="nginx 安装"></a>nginx 安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p><strong>前言</strong><br>上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上<br>采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁</p>
+</blockquote>
+<p>常用命令：<br>/etc/init.d/nginx restart<br>tail -f /var/log/nginx/error.log<br>vi /etc/nginx/nginx.conf<br>/etc/init.d/php5-fpm start</p>
+<h2 id="php5-fpm_-i"><a href="#php5-fpm_-i" class="headerlink" title="php5-fpm -i"></a>php5-fpm -i</h2><a id="more"></a>
+<h1 id="nginx__u5B89_u88C5"><a href="#nginx__u5B89_u88C5" class="headerlink" title="nginx 安装"></a>nginx 安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure>
 <h2 id="u542F_u52A8nginx"><a href="#u542F_u52A8nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service nginx start <span class="comment">#启动nginx服务</span></span><br><span class="line">ps -elf | grep nginx <span class="comment">#查看是否启动nginx</span></span><br><span class="line">/etc/init.d/nginx restart <span class="comment">#重启nginx</span></span><br></pre></td></tr></table></figure>
 <h2 id="u67E5_u770Bnginx_u65E5_u5FD7"><a href="#u67E5_u770Bnginx_u65E5_u5FD7" class="headerlink" title="查看nginx日志"></a>查看nginx日志</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/nginx.conf  <span class="comment">#查看log文件位置</span></span><br><span class="line">tail <span class="operator">-f</span> /var/<span class="built_in">log</span>/nginx/error.log <span class="comment">#查看错误log</span></span><br><span class="line">tail <span class="operator">-f</span> /var/<span class="built_in">log</span>/nginx/access.log <span class="comment">#查看链接log</span></span><br></pre></td></tr></table></figure>
 <h2 id="u6D4B_u8BD5nginx_u662F_u5426_u8FD0_u884C_u6210_u529F"><a href="#u6D4B_u8BD5nginx_u662F_u5426_u8FD0_u884C_u6210_u529F" class="headerlink" title="测试nginx是否运行成功"></a>测试nginx是否运行成功</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop<span class="comment"># curl localhost #若无curl命令 apt-get install curl</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Welcome to nginx!&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    body &#123;</span><br><span class="line">        width: <span class="number">35</span>em;</span><br><span class="line">        margin: <span class="number">0</span> auto;</span><br><span class="line">        font-family: Tahoma, Verdana, Arial, sans-serif;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;If you see this page, the nginx web server is successfully installed and</span><br><span class="line">working. Further configuration is required.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;For online documentation and support please refer to</span><br><span class="line">&lt;a href=<span class="string">"http://nginx.org/"</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;</span><br><span class="line">Commercial support is available at</span><br><span class="line">&lt;a href=<span class="string">"http://nginx.com/"</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;em&gt;Thank you <span class="keyword">for</span> using nginx.&lt;/em&gt;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">root@<span class="number">24</span>aa86ae75b9:/home/vrgroup/Desktop<span class="comment">#</span></span><br></pre></td></tr></table></figure>
@@ -307,7 +311,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="基于nginx-php-redis-htk搭建在线连续语音识别系统" data-title="基于nginx php redis htk搭建在线连续语音识别系统" data-url="http://yoursite.com/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/"></div>
+	<div class="ds-thread" data-thread-key="基于nginx-php-redis-htk搭建在线连续语音识别系统" data-title="基于 nginx php redis htk 搭建在线连续语音识别系统" data-url="http://yoursite.com/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
