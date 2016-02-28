@@ -16,7 +16,7 @@
 <meta property="og:description" content="前言上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁
 
 常用命令：/etc/init.d/nginx restarttail -f /var/log/nginx/error.logvi /etc/nginx/nginx.conf/etc/init.d/p">
-<meta property="og:updated_time" content="2016-02-28T04:08:36.000Z">
+<meta property="og:updated_time" content="2016-02-28T04:10:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 nginx php redis htk 搭建在线连续语音识别系统">
 <meta name="twitter:description" content="前言上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁
@@ -243,8 +243,8 @@
         <blockquote>
 <p><strong>前言</strong><br>上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上<br>采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁</p>
 </blockquote>
-<p>常用命令：<br>/etc/init.d/nginx restart<br>tail -f /var/log/nginx/error.log<br>vi /etc/nginx/nginx.conf<br>/etc/init.d/php5-fpm start</p>
-<h2 id="php5-fpm_-i"><a href="#php5-fpm_-i" class="headerlink" title="php5-fpm -i"></a>php5-fpm -i</h2><a id="more"></a>
+<h2 id="u5E38_u7528_u547D_u4EE4_uFF1A"><a href="#u5E38_u7528_u547D_u4EE4_uFF1A" class="headerlink" title="常用命令："></a>常用命令：</h2><p>/etc/init.d/nginx restart<br>tail -f /var/log/nginx/error.log<br>vi /etc/nginx/nginx.conf<br>/etc/init.d/php5-fpm start<br>php5-fpm -i</p>
+<a id="more"></a>
 <h1 id="nginx__u5B89_u88C5"><a href="#nginx__u5B89_u88C5" class="headerlink" title="nginx 安装"></a>nginx 安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure>
 <h2 id="u542F_u52A8nginx"><a href="#u542F_u52A8nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service nginx start <span class="comment">#启动nginx服务</span></span><br><span class="line">ps -elf | grep nginx <span class="comment">#查看是否启动nginx</span></span><br><span class="line">/etc/init.d/nginx restart <span class="comment">#重启nginx</span></span><br></pre></td></tr></table></figure>
 <h2 id="u67E5_u770Bnginx_u65E5_u5FD7"><a href="#u67E5_u770Bnginx_u65E5_u5FD7" class="headerlink" title="查看nginx日志"></a>查看nginx日志</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/nginx.conf  <span class="comment">#查看log文件位置</span></span><br><span class="line">tail <span class="operator">-f</span> /var/<span class="built_in">log</span>/nginx/error.log <span class="comment">#查看错误log</span></span><br><span class="line">tail <span class="operator">-f</span> /var/<span class="built_in">log</span>/nginx/access.log <span class="comment">#查看链接log</span></span><br></pre></td></tr></table></figure>
