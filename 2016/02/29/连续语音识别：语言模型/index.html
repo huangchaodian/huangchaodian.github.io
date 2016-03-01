@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>连续语音识别：语言模型 | Hucd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="**简介××针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上srilm官网查询。
+
+常用命令12ngram-count -text train.txt -lm trainiconv -f GBK -t utf-8 train">
+<meta property="og:type" content="article">
+<meta property="og:title" content="连续语音识别：语言模型">
+<meta property="og:url" content="http://yoursite.com/2016/02/29/连续语音识别：语言模型/index.html">
+<meta property="og:site_name" content="Hucd">
+<meta property="og:description" content="**简介××针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上srilm官网查询。
+
+常用命令12ngram-count -text train.txt -lm trainiconv -f GBK -t utf-8 train">
+<meta property="og:updated_time" content="2016-03-01T08:03:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="连续语音识别：语言模型">
+<meta name="twitter:description" content="**简介××针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上srilm官网查询。
+
+常用命令12ngram-count -text train.txt -lm trainiconv -f GBK -t utf-8 train">
+  
+    <link rel="alternative" href="/atom.xml" title="Hucd" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/psu.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Huang Chaodian</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/hdecode/" style="font-size: 10px;">hdecode</a> <a href="/tags/htk/" style="font-size: 20px;">htk</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/srilm/" style="font-size: 10px;">srilm</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是黄朝殿，毕业于中科院软件所人机交互实验，916061391@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Huang Chaodian</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/psu.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Huang Chaodian</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-连续语音识别：语言模型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/29/连续语音识别：语言模型/" class="article-date">
+  	<time datetime="2016-03-01T07:39:19.000Z" itemprop="datePublished">2016-02-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      连续语音识别：语言模型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/srilm/">srilm</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>**简介××<br>针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上<a href="http://www.speech.sri.com/projects/srilm/download.html" target="_blank" rel="external">srilm</a>官网查询。</p>
+</blockquote>
+<h2 id="u5E38_u7528_u547D_u4EE4"><a href="#u5E38_u7528_u547D_u4EE4" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ngram-count -text train.txt -lm train</span><br><span class="line">iconv <span class="operator">-f</span> GBK -t utf-<span class="number">8</span> train</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="srilm__u5B89_u88C5"><a href="#srilm__u5B89_u88C5" class="headerlink" title="srilm 安装"></a>srilm 安装</h1><p>官网中 <a href="http://www.speech.sri.com/projects/srilm/download.html" target="_blank" rel="external">http://www.speech.sri.com/projects/srilm/download.html</a> 填写相关信息后即可免费下载源码.<br>下载后解压<br>按照INSTALL文件说明 修改Makefile文件中SRILM变量<br>SRILM = /home/vrgroup/Desktop/srilm-1.7.1<br>执行如下命令进行编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># make World</span></span><br></pre></td></tr></table></figure></p>
+<p>生成bin lib include lib 三个文件夹<br>其中bin中就包含了需要用到的工具</p>
+<h1 id="u8BAD_u7EC3_u82F1_u6587_u8BED_u8A00_u6A21_u578B"><a href="#u8BAD_u7EC3_u82F1_u6587_u8BED_u8A00_u6A21_u578B" class="headerlink" title="训练英文语言模型"></a>训练英文语言模型</h1><p>直接对REDEME文件进行语言模型建模。生成test文件。该文件即为语言模型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># bin/i686-m64/ngram-count -text README -lm test</span></span><br><span class="line">warning: discount coeff <span class="number">1</span> is out of range: <span class="number">0</span></span><br><span class="line">warning: count of count <span class="number">8</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">7</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">6</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">5</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">4</span> is zero -- lowering maxcount</span><br><span class="line">warning: discount coeff <span class="number">1</span> is out of range: <span class="number">0</span></span><br><span class="line">warning: count of count <span class="number">8</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">7</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">6</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">5</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">4</span> is zero -- lowering maxcount</span><br><span class="line">warning: count of count <span class="number">3</span> is zero -- lowering maxcount</span><br><span class="line">warning: discount coeff <span class="number">1</span> is out of range: <span class="number">0</span></span><br><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># vim test</span></span><br><span class="line"><span class="comment">#test 文件内容如下所示</span></span><br><span class="line"></span><br><span class="line">\data\</span><br><span class="line">ngram <span class="number">1</span>=<span class="number">63</span></span><br><span class="line">ngram <span class="number">2</span>=<span class="number">84</span></span><br><span class="line">ngram <span class="number">3</span>=<span class="number">4</span></span><br><span class="line"></span><br><span class="line">\<span class="number">1</span>-grams:</span><br><span class="line">-<span class="number">1.959041</span>	$	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	<span class="variable">$Header</span>:	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	(from	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.959041</span>	/home/srilm/CVS/srilm/README,v	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	<span class="number">1.9</span>	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	<span class="number">19</span>:<span class="number">35</span>:<span class="number">49</span>	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	<span class="number">2009</span>/<span class="number">12</span>/<span class="number">02</span>	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">0.7829502</span>	&lt;/s&gt;</span><br><span class="line">-<span class="number">99</span>	&lt;s&gt;	-<span class="number">1.125891</span></span><br><span class="line">-<span class="number">1.959041</span>	C	-<span class="number">0.2815078</span></span><br><span class="line">-<span class="number">1.658011</span>	C++	-<span class="number">0.4674698</span></span><br><span class="line">-<span class="number">1.959041</span>	DECIPHER(TM)	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	Exp	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	INSTALL	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	LM	-<span class="number">0.2864712</span></span><br><span class="line">-<span class="number">1.959041</span>	SRI	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	See	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	Subdirectories	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.356981</span>	and	-<span class="number">0.6693475</span></span><br><span class="line">-<span class="number">1.959041</span>	bin/	-<span class="number">0.2864712</span></span><br><span class="line">-<span class="number">1.959041</span>	build	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	common/	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	convenience	-<span class="number">0.2815078</span></span><br><span class="line">-<span class="number">1.959041</span>	data	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	doc/	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	documentation	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	dstruct/	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.959041</span>	factored	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.959041</span>	files	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	flm/	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	<span class="keyword">for</span>	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	header	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	include/	-<span class="number">0.2864712</span></span><br><span class="line">-<span class="number">1.959041</span>	instructions.	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.658011</span>	language	-<span class="number">0.4674699</span></span><br><span class="line">-<span class="number">1.959041</span>	lattice	-<span class="number">0.2815078</span></span><br><span class="line">-<span class="number">1.959041</span>	lattice/	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	lib/	-<span class="number">0.2864712</span></span><br><span class="line">-<span class="number">1.959041</span>	libraries	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.356981</span>	library	-<span class="number">0.5972611</span></span><br><span class="line">-<span class="number">1.959041</span>	lm/	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.959041</span>	makefiles	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	man	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	man/	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	misc/	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.658011</span>	miscellaneous	-<span class="number">0.4674698</span></span><br><span class="line">-<span class="number">1.658011</span>	model	-<span class="number">0.4575991</span></span><br><span class="line">-<span class="number">1.959041</span>	of	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	pages	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	programs	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.48192</span>	released	-<span class="number">0.5875012</span></span><br><span class="line">-<span class="number">1.959041</span>	scripts	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	shared	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	srilm	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	stolcke	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	structures	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.959041</span>	system)	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.658011</span>	the	-<span class="number">0.4674698</span></span><br><span class="line">-<span class="number">1.959041</span>	tool	-<span class="number">0.2228022</span></span><br><span class="line">-<span class="number">1.48192</span>	tools	-<span class="number">0.5238322</span></span><br><span class="line">-<span class="number">1.959041</span>	using	-<span class="number">0.2913786</span></span><br><span class="line">-<span class="number">1.959041</span>	utility	-<span class="number">0.2962311</span></span><br><span class="line">-<span class="number">1.959041</span>	utils/	-<span class="number">0.2913786</span></span><br><span class="line"></span><br><span class="line">\<span class="number">2</span>-grams:</span><br><span class="line">-<span class="number">0.30103</span>	$ &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	<span class="variable">$Header</span>: /home/srilm/CVS/srilm/README,v</span><br><span class="line">-<span class="number">0.30103</span>	(from the</span><br><span class="line">-<span class="number">0.30103</span>	/home/srilm/CVS/srilm/README,v <span class="number">1.9</span></span><br><span class="line">-<span class="number">0.30103</span>	<span class="number">1.9</span> <span class="number">2009</span>/<span class="number">12</span>/<span class="number">02</span></span><br><span class="line">-<span class="number">0.30103</span>	<span class="number">19</span>:<span class="number">35</span>:<span class="number">49</span> stolcke</span><br><span class="line">-<span class="number">0.30103</span>	<span class="number">2009</span>/<span class="number">12</span>/<span class="number">02</span> <span class="number">19</span>:<span class="number">35</span>:<span class="number">49</span></span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; <span class="variable">$Header</span>:</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; See</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; Subdirectories</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; bin/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; common/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; doc/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; dstruct/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; flm/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; include/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; lattice/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; lib/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; lm/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; man/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; misc/</span><br><span class="line">-<span class="number">1.20412</span>	&lt;s&gt; utils/</span><br><span class="line">-<span class="number">0.30103</span>	C and</span><br><span class="line">-<span class="number">0.4771213</span>	C++ convenience</span><br><span class="line">-<span class="number">0.4771213</span>	C++ data</span><br><span class="line">-<span class="number">0.30103</span>	DECIPHER(TM) system)</span><br><span class="line">-<span class="number">0.30103</span>	Exp $</span><br><span class="line">-<span class="number">0.30103</span>	INSTALL <span class="keyword">for</span></span><br><span class="line">-<span class="number">0.30103</span>	LM tools</span><br><span class="line">-<span class="number">0.30103</span>	SRI DECIPHER(TM)</span><br><span class="line">-<span class="number">0.30103</span>	See INSTALL</span><br><span class="line">-<span class="number">0.30103</span>	Subdirectories of</span><br><span class="line">-<span class="number">0.69897</span>	and C++</span><br><span class="line">-<span class="number">0.69897</span>	and tool</span><br><span class="line">-<span class="number">0.39794</span>	and tools	<span class="number">0.1249388</span></span><br><span class="line">-<span class="number">0.30103</span>	bin/ released</span><br><span class="line">-<span class="number">0.30103</span>	build instructions.</span><br><span class="line">-<span class="number">0.30103</span>	common/ shared</span><br><span class="line">-<span class="number">0.30103</span>	convenience library</span><br><span class="line">-<span class="number">0.30103</span>	data structures</span><br><span class="line">-<span class="number">0.30103</span>	doc/ documentation</span><br><span class="line">-<span class="number">0.30103</span>	documentation &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	dstruct/ C++</span><br><span class="line">-<span class="number">0.30103</span>	factored language</span><br><span class="line">-<span class="number">0.30103</span>	files &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	flm/ factored</span><br><span class="line">-<span class="number">0.30103</span>	<span class="keyword">for</span> build</span><br><span class="line">-<span class="number">0.30103</span>	header files</span><br><span class="line">-<span class="number">0.30103</span>	include/ released</span><br><span class="line">-<span class="number">0.30103</span>	instructions. &lt;/s&gt;</span><br><span class="line">-<span class="number">0.1760913</span>	language model	<span class="number">0</span></span><br><span class="line">-<span class="number">0.30103</span>	lattice library</span><br><span class="line">-<span class="number">0.30103</span>	lattice/ lattice</span><br><span class="line">-<span class="number">0.30103</span>	lib/ released</span><br><span class="line">-<span class="number">0.30103</span>	libraries &lt;/s&gt;</span><br><span class="line">-<span class="number">0.69897</span>	library &lt;/s&gt;</span><br><span class="line">-<span class="number">0.2218488</span>	library and	-<span class="number">0.2552725</span></span><br><span class="line">-<span class="number">0.30103</span>	lm/ language</span><br><span class="line">-<span class="number">0.30103</span>	makefiles (from</span><br><span class="line">-<span class="number">0.30103</span>	man pages</span><br><span class="line">-<span class="number">0.30103</span>	man/ man</span><br><span class="line">-<span class="number">0.30103</span>	misc/ miscellaneous</span><br><span class="line">-<span class="number">0.4771213</span>	miscellaneous C</span><br><span class="line">-<span class="number">0.4771213</span>	miscellaneous utility</span><br><span class="line">-<span class="number">0.1760913</span>	model library	-<span class="number">0.07918125</span></span><br><span class="line">-<span class="number">0.30103</span>	of srilm</span><br><span class="line">-<span class="number">0.30103</span>	pages &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	programs &lt;/s&gt;</span><br><span class="line">-<span class="number">0.60206</span>	released header</span><br><span class="line">-<span class="number">0.60206</span>	released libraries</span><br><span class="line">-<span class="number">0.60206</span>	released programs</span><br><span class="line">-<span class="number">0.30103</span>	scripts using</span><br><span class="line">-<span class="number">0.30103</span>	shared makefiles</span><br><span class="line">-<span class="number">0.30103</span>	srilm &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	stolcke Exp</span><br><span class="line">-<span class="number">0.30103</span>	structures &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	system) &lt;/s&gt;</span><br><span class="line">-<span class="number">0.4771213</span>	the LM</span><br><span class="line">-<span class="number">0.4771213</span>	the SRI</span><br><span class="line">-<span class="number">0.30103</span>	tool &lt;/s&gt;</span><br><span class="line">-<span class="number">0.1249387</span>	tools &lt;/s&gt;</span><br><span class="line">-<span class="number">0.30103</span>	using the</span><br><span class="line">-<span class="number">0.30103</span>	utility scripts</span><br><span class="line">-<span class="number">0.30103</span>	utils/ miscellaneous</span><br><span class="line"></span><br><span class="line">\<span class="number">3</span>-grams:</span><br><span class="line">-<span class="number">0.1760913</span>	library and tools</span><br><span class="line">-<span class="number">0.1760913</span>	model library and</span><br><span class="line">-<span class="number">0.1760913</span>	language model library</span><br><span class="line">-<span class="number">0.1760913</span>	and tools &lt;/s&gt;</span><br><span class="line"></span><br><span class="line">\end\</span><br></pre></td></tr></table></figure></p>
+<p>这是一个ARPA-MIT LM 格式的三元语言模型文件 第一个浮点数表示概率(log10),后面的浮点数表示back-off权重(log10).back-off权重主要用于平滑概率为0的数据.具体概率计算方法按照如下公式:</p>
+<blockquote>
+<ul>
+<li>if p(a|bc)==0 : p(a|bc)=backoff*p(a|b)</li>
+<li>if p(a|b)==0 : p(a|b)=backoff*p(a)</li>
+</ul>
+</blockquote>
+<h1 id="u4E2D_u6587_u8BED_u8A00_u6A21_u578B_u8BAD_u7EC3"><a href="#u4E2D_u6587_u8BED_u8A00_u6A21_u578B_u8BAD_u7EC3" class="headerlink" title="中文语言模型训练"></a>中文语言模型训练</h1><p>对于中文文本,需要先进行分词,然后才能进行词频统计来建立语言模型,HTokenize工具可以用来分词.分词后结果如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># iconv -f GBK -t utf-8 train.txt </span></span><br><span class="line">请 显示 需要 优先 处理 的 事项</span><br><span class="line">请 标识 优先 处理 的 位置</span><br><span class="line">请 进入 乙烯 装置 模型 定位 报警 设备 有 多处 报警</span><br><span class="line">显示 设备 当前 信息 参数</span><br><span class="line">切 换 安全 管 控 界面</span><br><span class="line">请 给 出 复合 报警 的 相关 点 点 位 趋势 图 息 界面</span><br><span class="line">请 调 出 实时 监控 画面</span><br><span class="line">请 查看 复合 报警 相应 模型 图</span><br><span class="line">结合 知识 库 请 分析 故障 原因 并且 给 出 处理 措施</span><br><span class="line">请 进行 相应 处理 生成 故障 处理 报告 归 档 到 知识 库</span><br><span class="line">请 处理 裂解 炉 燃料 油 改 燃料 气 工艺 方案 切 换</span><br><span class="line">请 先 切 换 到 方案 切 换 模拟 状态</span><br><span class="line">请 显示 工艺 方案 指导 规程</span><br><span class="line">显示 关键 点 位 及 指标 趋势 图</span><br><span class="line">观察 指标 趋势</span><br><span class="line">切 换 模拟 完成</span><br><span class="line">紧急 事项 处理 完成</span><br><span class="line">语音 助手 主动 汇报 事故 相关 信息</span><br><span class="line">了解 外 操 情况</span><br><span class="line">外 操 人员 携带 防护 设备 进入 现场 勘查</span><br><span class="line">调用 北 美 应急 手册</span><br><span class="line">通知 人员 撤离 去 往 紧急 集合 地点</span><br><span class="line">计算 消防 路线</span><br><span class="line">报告 消防 支队 气 防 炼 化 医院</span><br><span class="line">通知 其他 岗位 人员 增援</span><br><span class="line">对 清 污 分 流 阀门 进行 确认</span><br><span class="line">打开 消防 炮 消防 栓</span><br><span class="line">计算 模拟 气体 扩散 影响 结果</span><br><span class="line">紧急 停车</span><br><span class="line">要求 上游 装置 将 酸性 气体 改 至 运行 的 其他 硫磺 收集 装置 或 气 柜</span><br><span class="line">计算 气体 扩散</span><br><span class="line">结果 报告 政府 部门 报告 指挥 中心</span><br><span class="line">根据 堵 漏 方案 对 分 液 灌 泄 压 置换</span><br><span class="line">对 现场 气体 进行 检测</span><br><span class="line">形成 事故 报告</span><br><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+<p>同样命令可得到中文语言模型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@vrgroup-Precision-M6800:/home/vrgroup/Desktop/srilm-1.7.1# bin/i686-m64/ngram-count -text train.txt -lm train&#10;warning: discount coeff 1 is out of range: 0&#10;warning: count of count 8 is zero -- lowering maxcount&#10;warning: count of count 7 is zero -- lowering maxcount&#10;warning: count of count 6 is zero -- lowering maxcount&#10;warning: discount coeff 3 is out of range: -0.0228311&#10;warning: count of count 4 is zero&#10;warning: count of count 8 is zero -- lowering maxcount&#10;warning: count of count 7 is zero -- lowering maxcount&#10;warning: count of count 6 is zero -- lowering maxcount&#10;warning: count of count 5 is zero -- lowering maxcount&#10;warning: count of count 4 is zero -- lowering maxcount&#10;warning: count of count 3 is zero -- lowering maxcount&#10;warning: discount coeff 1 is out of range: 0&#10;root@vrgroup-Precision-M6800:/home/vrgroup/Desktop/srilm-1.7.1#</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5728HDecode_u4E2D_u4F7F_u7528_u8BED_u8A00_u6A21_u578B"><a href="#u5728HDecode_u4E2D_u4F7F_u7528_u8BED_u8A00_u6A21_u578B" class="headerlink" title="在HDecode中使用语言模型"></a>在HDecode中使用语言模型</h1><p>训练好的模型需要进行gzip压缩才可以用于HDecode.替换掉HDecode中语言模型参数-w为train即可完成对特定语言的识别,从而提高特定领域的识别率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># gzip train</span></span><br><span class="line">./RedisToHDecode -A -D -V -T <span class="number">1</span> -C hdecode.hlda.cfg -H S2.hlda.MMF -y rec -t <span class="number">250.0</span> <span class="number">250.0</span> -u <span class="number">3500</span> -v <span class="number">125.0</span> <span class="operator">-s</span> <span class="number">12.0</span> -p -<span class="number">10.0</span> -w train -i out <span class="number">64</span>k.decode.dct xwrd.clustered.mlist test.plp</span><br></pre></td></tr></table></figure></p>
+<p>```</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="连续语音识别：语言模型" data-title="连续语音识别：语言模型" data-url="http://yoursite.com/2016/02/29/连续语音识别：语言模型/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Huang Chaodian
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
