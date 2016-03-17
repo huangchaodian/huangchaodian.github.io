@@ -6,25 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>android 连续语言识别离线系统搭建 | Hucd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。
-
-NDK环境搭建NDK环境搭建可参照Andye的博客史上最易懂的Android jni开发资料–NDK环境搭建.讲得很全面。这里就不再重复
-HCopy工具包查看HTK中MakeFile文件可知道 HCo">
+  <meta name="description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android 连续语言识别离线系统搭建">
 <meta property="og:url" content="http://yoursite.com/2016/03/16/android连续语言识别离线系统搭建/index.html">
 <meta property="og:site_name" content="Hucd">
-<meta property="og:description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。
-
-NDK环境搭建NDK环境搭建可参照Andye的博客史上最易懂的Android jni开发资料–NDK环境搭建.讲得很全面。这里就不再重复
-HCopy工具包查看HTK中MakeFile文件可知道 HCo">
-<meta property="og:updated_time" content="2016-03-17T04:08:26.000Z">
+<meta property="og:description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。">
+<meta property="og:updated_time" content="2016-03-17T04:13:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android 连续语言识别离线系统搭建">
-<meta name="twitter:description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。
-
-NDK环境搭建NDK环境搭建可参照Andye的博客史上最易懂的Android jni开发资料–NDK环境搭建.讲得很全面。这里就不再重复
-HCopy工具包查看HTK中MakeFile文件可知道 HCo">
+<meta name="twitter:description" content="前言本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。">
   
     <link rel="alternative" href="/atom.xml" title="Hucd" type="application/atom+xml">
   
@@ -246,6 +237,7 @@ HCopy工具包查看HTK中MakeFile文件可知道 HCo">
         <blockquote>
 <p><strong>前言</strong><br>本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。</p>
 </blockquote>
+<a id="more"></a>
 <h1 id="NDK_u73AF_u5883_u642D_u5EFA"><a href="#NDK_u73AF_u5883_u642D_u5EFA" class="headerlink" title="NDK环境搭建"></a>NDK环境搭建</h1><p>NDK环境搭建可参照<a href="http://www.cnblogs.com/yejiurui/p/3476565.html" target="_blank" rel="external">Andye的博客</a>史上最易懂的Android jni开发资料–NDK环境搭建.讲得很全面。这里就不再重复</p>
 <h1 id="HCopy_u5DE5_u5177_u5305"><a href="#HCopy_u5DE5_u5177_u5305" class="headerlink" title="HCopy工具包"></a>HCopy工具包</h1><p>查看HTK中MakeFile文件可知道 HCopy依赖于下列文件<br>HCopy.c esig_asc.c      esignal.c esig_edr.c     esig_nat.c     HAdapt.c     HArc.c     HAudio.c     HDict.c     HExactMPE.c     HFB.c     HFBLat.c     HLabel.c     HLat.c     HLM.c     HMap.c     HMath.c     HMem.c     HModel.c     HNet.c     HParm.c     HRec.c     HShell.c     HSigP.c     HTrain.c     HUtil.c     HVQ.c     HWave.c     strarr.c<br>将这些文件拷贝到jni目录中。并且修改Android.mk文件:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH := $(call my-dir)</span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line">LOCAL_MODULE := TestNdk</span><br><span class="line">LOCAL_SRC_FILES := com_example_uploadfileactivity_JniClient.c HCopy.c esig_asc.c 	 esignal.c esig_edr.c 	esig_nat.c 	HAdapt.c 	HArc.c 	HAudio.c 	HDict.c 	HExactMPE.c 	HFB.c 	HFBLat.c 	HLabel.c 	HLat.c 	HLM.c 	HMap.c 	HMath.c 	HMem.c 	HModel.c 	HNet.c 	HParm.c 	HRec.c 	HShell.c 	HSigP.c 	HTrain.c 	HUtil.c 	HVQ.c 	HWave.c 	strarr.c </span><br><span class="line">include $(BUILD_SHARED_LIBRARY)</span><br></pre></td></tr></table></figure></p>
 <p>Build一下即可完成对HCopy源码的编译并在obj/local/armeabi/目录下生成 libTestNdk.so文件 在需要调用该动态库的类中添加如下代码即可:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static &#123;</span><br><span class="line">	     System.loadLibrary(<span class="string">"TestNdk"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
