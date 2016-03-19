@@ -16,7 +16,7 @@
 <meta property="og:description" content="简介针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上srilm官网查询。
 
 常用命令12ngram-count -text train.txt -lm trainiconv -f GBK -t utf-8 train">
-<meta property="og:updated_time" content="2016-03-19T22:33:30.000Z">
+<meta property="og:updated_time" content="2016-03-19T22:39:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="连续语音识别：语言模型">
 <meta name="twitter:description" content="简介针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上srilm官网查询。
@@ -251,9 +251,10 @@
 <p>这是一个ARPA-MIT LM 格式的三元语言模型文件 第一个浮点数表示概率(log10),后面的浮点数表示back-off权重(log10).back-off权重主要用于平滑概率为0的数据.具体概率计算方法按照如下公式:</p>
 <blockquote>
 <ul>
-<li>p(c b a)=p(a|b c);</li>
-<li>if p(a|b c)==0 : p(c b a)=backoff(c b)*p(a|b)</li>
-<li>if p(a|b)==0 : p(a|b)=backoff(b)*p(a)</li>
+<li>P表示 (c b a)出现的概率</li>
+<li>P=p(a|b c);</li>
+<li>if p(a|b c)==0 : P=backoff(c b)*p(a|b)</li>
+<li>if p(a|b)==0 : P=backoff(b)*p(a)</li>
 </ul>
 </blockquote>
 <h1 id="u4E2D_u6587_u8BED_u8A00_u6A21_u578B_u8BAD_u7EC3"><a href="#u4E2D_u6587_u8BED_u8A00_u6A21_u578B_u8BAD_u7EC3" class="headerlink" title="中文语言模型训练"></a>中文语言模型训练</h1><p>对于中文文本,需要先进行分词,然后才能进行词频统计来建立语言模型,HTokenize工具可以用来分词.分词后结果如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment"># iconv -f GBK -t utf-8 train.txt </span></span><br><span class="line">请 显示 需要 优先 处理 的 事项</span><br><span class="line">请 标识 优先 处理 的 位置</span><br><span class="line">请 进入 乙烯 装置 模型 定位 报警 设备 有 多处 报警</span><br><span class="line">显示 设备 当前 信息 参数</span><br><span class="line">切 换 安全 管 控 界面</span><br><span class="line">请 给 出 复合 报警 的 相关 点 点 位 趋势 图 息 界面</span><br><span class="line">请 调 出 实时 监控 画面</span><br><span class="line">请 查看 复合 报警 相应 模型 图</span><br><span class="line">结合 知识 库 请 分析 故障 原因 并且 给 出 处理 措施</span><br><span class="line">请 进行 相应 处理 生成 故障 处理 报告 归 档 到 知识 库</span><br><span class="line">请 处理 裂解 炉 燃料 油 改 燃料 气 工艺 方案 切 换</span><br><span class="line">请 先 切 换 到 方案 切 换 模拟 状态</span><br><span class="line">请 显示 工艺 方案 指导 规程</span><br><span class="line">显示 关键 点 位 及 指标 趋势 图</span><br><span class="line">观察 指标 趋势</span><br><span class="line">切 换 模拟 完成</span><br><span class="line">紧急 事项 处理 完成</span><br><span class="line">语音 助手 主动 汇报 事故 相关 信息</span><br><span class="line">了解 外 操 情况</span><br><span class="line">外 操 人员 携带 防护 设备 进入 现场 勘查</span><br><span class="line">调用 北 美 应急 手册</span><br><span class="line">通知 人员 撤离 去 往 紧急 集合 地点</span><br><span class="line">计算 消防 路线</span><br><span class="line">报告 消防 支队 气 防 炼 化 医院</span><br><span class="line">通知 其他 岗位 人员 增援</span><br><span class="line">对 清 污 分 流 阀门 进行 确认</span><br><span class="line">打开 消防 炮 消防 栓</span><br><span class="line">计算 模拟 气体 扩散 影响 结果</span><br><span class="line">紧急 停车</span><br><span class="line">要求 上游 装置 将 酸性 气体 改 至 运行 的 其他 硫磺 收集 装置 或 气 柜</span><br><span class="line">计算 气体 扩散</span><br><span class="line">结果 报告 政府 部门 报告 指挥 中心</span><br><span class="line">根据 堵 漏 方案 对 分 液 灌 泄 压 置换</span><br><span class="line">对 现场 气体 进行 检测</span><br><span class="line">形成 事故 报告</span><br><span class="line">/home/vrgroup/Desktop/srilm-<span class="number">1.7</span>.<span class="number">1</span><span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
