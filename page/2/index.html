@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/hdecode/" style="font-size: 15px;">hdecode</a> <a href="/tags/htk/" style="font-size: 20px;">htk</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/ndk/" style="font-size: 10px;">ndk</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/srilm/" style="font-size: 10px;">srilm</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
+						<a href="/tags/IM/" style="font-size: 10px;">IM</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/hdecode/" style="font-size: 15px;">hdecode</a> <a href="/tags/htk/" style="font-size: 20px;">htk</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux-shell/" style="font-size: 10px;">linux shell</a> <a href="/tags/ndk/" style="font-size: 10px;">ndk</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/socket-io/" style="font-size: 10px;">socket.io</a> <a href="/tags/srilm/" style="font-size: 10px;">srilm</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a>
 					</div>
 				</section>
 				
@@ -197,6 +197,60 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-多说评论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/21/多说评论/" class="article-date">
+  	<time datetime="2016-01-21T12:32:45.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/多说评论/">多说评论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="u591A_u8BF4_u8D26_u6237"><a href="#u591A_u8BF4_u8D26_u6237" class="headerlink" title="多说账户"></a>多说账户</h1><p>免费的评论系统，方便实用。<br><a href="http://huangchaodian.duoshuo.com/admin/tools/" target="_blank" rel="external">http://huangchaodian.duoshuo.com/admin/tools/</a></p>
+<h1 id="u901A_u7528_u4EE3_u7801"><a href="#u901A_u7528_u4EE3_u7801" class="headerlink" title="通用代码"></a>通用代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 多说评论框 start --&gt;</span><br><span class="line">	&lt;div class=<span class="string">"ds-thread"</span> data-thread-key=<span class="string">"请将此处替换成文章在你的站点中的ID"</span> data-title=<span class="string">"请替换成文章的标题"</span> data-url=<span class="string">"请替换成文章的网址"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;!-- 多说评论框 end --&gt;</span><br><span class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">var duoshuoQuery = &#123;short_name:<span class="string">"huangchaodian"</span>&#125;;</span><br><span class="line">	(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">		var ds = document.createElement(<span class="string">'script'</span>);</span><br><span class="line">		ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</span><br><span class="line">		ds.src = (document.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.unstable.js'</span>;</span><br><span class="line">		ds.charset = <span class="string">'UTF-8'</span>;</span><br><span class="line">		(document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] </span><br><span class="line">		 || document.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</span><br><span class="line">	&#125;)();</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;!-- 多说公共JS代码 end --&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-firstblog" class="article article-type-post" itemscope itemprop="blogPost">
   

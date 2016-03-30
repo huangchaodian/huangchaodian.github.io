@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hucd</title>
+  <title>Nodejs_SocketIO_Redis搭建IM系统 | Hucd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hucd">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言最近有人要我实现一个实时数据广播系统，能够支持多种web浏览器同时还要支持TCP链接。Socket.IO支持4种协议：WebSocket、htmlfile、xhr-polling、jsonp-polling，它会自动根据浏览 器选择适合的通讯方式，可以方便的完成web端的实时数据传输，同时nodejs本身也可以方便的实现tcp协议，同时nodejs针对redis的接口非常友好。本文通过redi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs_SocketIO_Redis搭建IM系统">
+<meta property="og:url" content="http://yoursite.com/2016/03/29/Nodejs-SocketIO-Redis搭建IM系统/index.html">
 <meta property="og:site_name" content="Hucd">
-<meta property="og:description">
+<meta property="og:description" content="前言最近有人要我实现一个实时数据广播系统，能够支持多种web浏览器同时还要支持TCP链接。Socket.IO支持4种协议：WebSocket、htmlfile、xhr-polling、jsonp-polling，它会自动根据浏览 器选择适合的通讯方式，可以方便的完成web端的实时数据传输，同时nodejs本身也可以方便的实现tcp协议，同时nodejs针对redis的接口非常友好。本文通过redi">
+<meta property="og:updated_time" content="2016-03-30T05:46:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hucd">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Nodejs_SocketIO_Redis搭建IM系统">
+<meta name="twitter:description" content="前言最近有人要我实现一个实时数据广播系统，能够支持多种web浏览器同时还要支持TCP链接。Socket.IO支持4种协议：WebSocket、htmlfile、xhr-polling、jsonp-polling，它会自动根据浏览 器选择适合的通讯方式，可以方便的完成web端的实时数据传输，同时nodejs本身也可以方便的实现tcp协议，同时nodejs针对redis的接口非常友好。本文通过redi">
   
     <link rel="alternative" href="/atom.xml" title="Hucd" type="application/atom+xml">
   
@@ -196,9 +197,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-Nodejs-SocketIO-Redis搭建IM系统" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Nodejs-SocketIO-Redis搭建IM系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/29/Nodejs-SocketIO-Redis搭建IM系统/" class="article-date">
@@ -214,12 +213,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/Nodejs-SocketIO-Redis搭建IM系统/">Nodejs_SocketIO_Redis搭建IM系统</a>
+    <h1 class="article-title" itemprop="name">
+      Nodejs_SocketIO_Redis搭建IM系统
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IM/">IM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket-io/">socket.io</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tcp/">tcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/websocket/">websocket</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -240,582 +250,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IM/">IM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket-io/">socket.io</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tcp/">tcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/websocket/">websocket</a></li></ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/android连续语言识别离线系统搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">android 连续语言识别离线系统搭建</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-      
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Nodejs-SocketIO-Redis搭建IM系统" data-title="Nodejs_SocketIO_Redis搭建IM系统" data-url="http://yoursite.com/2016/03/29/Nodejs-SocketIO-Redis搭建IM系统/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-  
-    <article id="post-android连续语言识别离线系统搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/16/android连续语言识别离线系统搭建/" class="article-date">
-  	<time datetime="2016-03-17T02:09:13.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/android连续语言识别离线系统搭建/">android 连续语言识别离线系统搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>前言</strong><br>本文介绍如何将htk工具包中HCopy和HDecode工具部署到android手机，从而实现手机端离线语言识别的功能。htk是开源的c语言工具包,在android中 通过NDK来集成该工具包。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hdecode/">hdecode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ndk/">ndk</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/16/android连续语言识别离线系统搭建/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-连续语音识别：语言模型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/29/连续语音识别：语言模型/" class="article-date">
-  	<time datetime="2016-03-01T07:39:19.000Z" itemprop="datePublished">2016-02-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/29/连续语音识别：语言模型/">连续语音识别：语言模型</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>简介</strong><br>针对不同的任何，可能需要不同的语言模型，从而提高语音识别系统的识别率，而srilm是一个非常好用的开源语言模型训练工具；具体介绍可上<a href="http://www.speech.sri.com/projects/srilm/download.html">srilm</a>官网查询。</p>
-</blockquote>
-<h2 id="u5E38_u7528_u547D_u4EE4"><a href="#u5E38_u7528_u547D_u4EE4" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ngram-count -text train.txt -lm train</span><br><span class="line">iconv <span class="operator">-f</span> GBK -t utf-<span class="number">8</span> train</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/srilm/">srilm</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/29/连续语音识别：语言模型/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/27/hello-world/" class="article-date">
-  	<time datetime="2016-02-28T04:18:21.000Z" itemprop="datePublished">2016-02-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>常用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"title"</span></span><br><span class="line">vim ./sources/_post/title.md</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/27/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-基于nginx-php-redis-htk搭建在线连续语音识别系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/" class="article-date">
-  	<time datetime="2016-01-31T20:13:10.000Z" itemprop="datePublished">2016-01-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/">基于 nginx php redis htk 搭建在线连续语音识别系统</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>前言</strong><br>上文已经描述了如何利用htk搭建连续语音识别系统,本文将描述如何将改系统推送到线上<br>采用nginx+php来接受用户需要识别的wav音频文件,通过htk来识别音频，redis充当两个部分的通信桥梁</p>
-</blockquote>
-<h2 id="u5E38_u7528_u547D_u4EE4_uFF1A"><a href="#u5E38_u7528_u547D_u4EE4_uFF1A" class="headerlink" title="常用命令："></a>常用命令：</h2><p>/etc/init.d/nginx restart<br>tail -f /var/log/nginx/error.log<br>vi /etc/nginx/nginx.conf<br>/etc/init.d/php5-fpm start<br>php5-fpm -i</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/31/基于nginx-php-redis-htk搭建在线连续语音识别系统/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-HTK-HDecode语音识别工具包环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/31/HTK-HDecode语音识别工具包环境搭建/" class="article-date">
-  	<time datetime="2016-01-31T13:33:56.000Z" itemprop="datePublished">2016-01-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/31/HTK-HDecode语音识别工具包环境搭建/">HTK HDecode语音识别工具包环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>前言</strong><br>当下语音识别技术发展迅速，本文介绍如何在docker容器中搭建HDecode运行环境</p>
-</blockquote>
-<h1 id="HTK__u5DE5_u5177_u5305"><a href="#HTK__u5DE5_u5177_u5305" class="headerlink" title="HTK 工具包"></a>HTK 工具包</h1><p>HTK 开源的语音识别工具包，可采用HTK工具包搭建连续语音识别系统，详情参见HTK 官网<a href="http://htk.eng.cam.ac.uk/">http://htk.eng.cam.ac.uk/</a><br>注册后 可免费下载 HDecode-3.4.1.tar.gz HTK-3.4.1.tar.gz 两个开源包</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hdecode/">hdecode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/htk/">htk</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/31/HTK-HDecode语音识别工具包环境搭建/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-httpfox" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/27/httpfox/" class="article-date">
-  	<time datetime="2016-01-27T08:13:57.000Z" itemprop="datePublished">2016-01-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/27/httpfox/">httpfox</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="u706B_u72D0_u6D4F_u89C8_u5668_u63D2_u4EF6httpfox_u53EF_u7528_u4E8E_u76D1_u89C6_u6D4F_u89C8_u5668_u53D1_u51FA_u7684_u6240_u6709_u8BF7_u6C42"><a href="#u706B_u72D0_u6D4F_u89C8_u5668_u63D2_u4EF6httpfox_u53EF_u7528_u4E8E_u76D1_u89C6_u6D4F_u89C8_u5668_u53D1_u51FA_u7684_u6240_u6709_u8BF7_u6C42" class="headerlink" title="火狐浏览器插件httpfox可用于监视浏览器发出的所有请求"></a>火狐浏览器插件httpfox可用于监视浏览器发出的所有请求</h1><p><a href="http://mozilla.com.cn/thread-30385-1-1.html" target="_blank" rel="external">http://mozilla.com.cn/thread-30385-1-1.html</a><br>点击我要安装完成后 按住ctl+shift+F2 即可打开监视工具<br>单击start开始记录所有请求<br>执行操作<br>单击stop停止记录<br>分析。。。。。<br><img src="/img/httpfox.jpg" alt="工具截图"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-docker创建虚拟机并使用ssh登录到虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/" class="article-date">
-  	<time datetime="2016-01-26T13:22:10.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/">docker 创建虚拟机并使用ssh登录到虚拟机</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>前言</strong><br>在新环境中搭建已有系统是一件非常头疼的事情,缓慢的安装过程，莫名其妙的错误。。。。而docker可以打包你的环境为镜像，需要部署的时候直接加载镜像即可。当然这只是docker的一个小的功能。</p>
-</blockquote>
-<p>常见命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#载入镜像</span></span><br><span class="line">docker import ubuntu_sshd.tar ubuntu:v2</span><br><span class="line"><span class="comment">#查看镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment">#运行容器</span></span><br><span class="line">docker run -it ubuntu:v2 /bin/bash</span><br><span class="line"><span class="comment">#查看容器</span></span><br><span class="line">docker ps <span class="operator">-a</span></span><br><span class="line"><span class="comment">#打包镜像</span></span><br><span class="line">docker <span class="built_in">export</span> <span class="number">2</span>ccd734c1ec5 &gt; ubuntu_sshd.tar</span><br><span class="line"><span class="comment">#删除容器</span></span><br><span class="line">docker rm hufdsaf_dafdsa</span><br><span class="line"><span class="comment">#删除镜像</span></span><br><span class="line">docker rmi <span class="number">2</span>ccd734c1ec5</span><br><span class="line"><span class="comment">#启动停止的容器</span></span><br><span class="line">docker start -i hufdsaf_dafdsa</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/26/docker创建虚拟机并使用ssh登录到虚拟机/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-条形码二维码识别器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/21/条形码二维码识别器/" class="article-date">
-  	<time datetime="2016-01-21T14:52:35.000Z" itemprop="datePublished">2016-01-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/条形码二维码识别器/">条形码二维码识别器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="zxing__u5F00_u6E90_u6761_u5F62_u7801_u4E8C_u7EF4_u7801_u8BC6_u522B_u5E93"><a href="#zxing__u5F00_u6E90_u6761_u5F62_u7801_u4E8C_u7EF4_u7801_u8BC6_u522B_u5E93" class="headerlink" title="zxing 开源条形码二维码识别库"></a>zxing 开源条形码二维码识别库</h1><p>zxing 是由java编写的开源库，其中包含对应的C++接口。下载地址为：<a href="https://github.com/glassechidna/zxing-cpp">https://github.com/glassechidna/zxing-cpp</a><br>在ubuntu 14.04 安装测试</p>
-<h1 id="u9996_u5148_u5B89_u88C5cmake"><a href="#u9996_u5148_u5B89_u88C5cmake" class="headerlink" title="首先安装cmake"></a>首先安装cmake</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake</span><br></pre></td></tr></table></figure>
-<h1 id="u7F16_u8BD1_u6E90_u7801_u751F_u6210_u5DE5_u5177zxing"><a href="#u7F16_u8BD1_u6E90_u7801_u751F_u6210_u5DE5_u5177zxing" class="headerlink" title="编译源码生成工具zxing"></a>编译源码生成工具zxing</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> zxing-cpp-master/</span><br><span class="line"><span class="built_in">cd</span> cmake/</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h1 id="u6D4B_u8BD5_u5DE5_u5177zxing"><a href="#u6D4B_u8BD5_u5DE5_u5177zxing" class="headerlink" title="测试工具zxing"></a>测试工具zxing</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./zxing --try-harder q.jpg</span><br><span class="line">./zxing --try-harder *.jpg</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/21/条形码二维码识别器/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-curl爬虫" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/21/curl爬虫/" class="article-date">
-  	<time datetime="2016-01-21T12:45:41.000Z" itemprop="datePublished">2016-01-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/curl爬虫/">curl 爬虫</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>前言</strong><br>最近需要在一个相同的网站上执行很多重复性操作，于是乎产生用脚本来代替浏览器操作的念头，而curl工具可以模拟浏览器发出的post,get,提交表单,上传文件，下载文件等等功能，刚好可以满足我的需求。</p>
-</blockquote>
-<h1 id="u5E38_u7528_u547D_u4EE4_u5982_u4E0B_u6240_u793A"><a href="#u5E38_u7528_u547D_u4EE4_u5982_u4E0B_u6240_u793A" class="headerlink" title="常用命令如下所示"></a>常用命令如下所示</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">正常访问:        curl localhost/index.php           get带参数访问:   curl localhost/index.php?name=hucd\&amp;password=hucd      </span><br><span class="line">post带参数访问:  curl <span class="operator">-d</span> <span class="string">"name=hucd&amp;password=hucd"</span> localhost/index.php  </span><br><span class="line">上传文件:        curl -F file=@./test.jpeg localhost/index.php</span><br><span class="line">获取cookie：     curl -c cookie.txt localhost/index.php </span><br><span class="line">带cookie访问:    curl -b cookie.txt localhost/index.php </span><br><span class="line">自动跳转：       curl -L -w <span class="string">'%&#123;url_effective&#125;\n'</span> localhost/index.php</span><br><span class="line">模拟不同浏览器： curl -A <span class="string">"Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)"</span> -o out.txt  localhost/index.php</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curl/">curl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/21/curl爬虫/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -839,8 +335,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
